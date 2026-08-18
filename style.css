@@ -404,3 +404,355 @@ h3 {
     font-family: var(--font-serif);
     font-size: 2rem;
 }
+
+/* ============================= */
+/*        RESPONSIVE DESIGN      */
+/* ============================= */
+
+/* Tablettes */
+@media (max-width: 900px) {
+
+    h2 {
+        font-size: 3rem;
+        text-align: center;
+        margin: 2rem 1rem;
+    }
+
+    h2::after {
+        height: .4rem;
+        left: .8rem;
+        bottom: .5rem;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+        height: auto;
+        padding: 2rem 1rem 6rem;
+    }
+
+    .hero__content {
+        width: min(90%, 700px);
+        margin-top: 4rem;
+        padding: 2.5rem 2rem;
+    }
+
+    .headline {
+        flex-wrap: wrap;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: clamp(4rem, 12vw, 7rem);
+        margin: 1.5rem 0;
+    }
+
+    .typewriter {
+        font-size: 1.5rem;
+    }
+
+    .contact {
+        gap: 18px;
+    }
+
+    .contact svg {
+        width: 46px;
+        height: 46px;
+    }
+
+    /* WORK */
+
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 30px 1.5rem;
+        gap: 1.5rem;
+    }
+
+    /* ABOUT */
+
+    .aboutme-wrapper {
+        width: calc(100% - 3rem);
+        margin: 30px 1.5rem;
+        padding: 2rem;
+    }
+
+    .aboutme p {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+    }
+
+    /* REVIEWS */
+
+    .reviews-list {
+        padding: 0 1.5rem;
+        gap: 3rem;
+    }
+
+    .reviews-list > * {
+        max-width: 100%;
+    }
+
+    /* CTA */
+
+    .final-cta {
+        padding: 70px 2rem;
+    }
+
+    .final-cta h3 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* Téléphones */
+@media (max-width: 600px) {
+
+    /* GLOBAL */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    h2 {
+        font-size: clamp(2.3rem, 10vw, 3.5rem);
+        margin: 2rem .75rem;
+        line-height: 1.05;
+    }
+
+    h2::after {
+        height: .3rem;
+        left: .4rem;
+        bottom: .35rem;
+    }
+
+
+    /* ================= */
+    /*       HERO        */
+    /* ================= */
+
+    .hero {
+        min-height: 100svh;
+        padding: 1rem .75rem 5rem;
+    }
+
+    .hero__content {
+        width: 100%;
+        max-width: 450px;
+        margin-top: 2rem;
+        padding: 2rem 1rem;
+        border-width: 3px;
+        border-radius: 14px;
+    }
+
+    .hero__content::before {
+        border-radius: 11px;
+    }
+
+    .headline {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .profile-picture {
+        width: 110px;
+        height: 110px;
+        box-shadow: 6px 6px 5px hsla(0, 0%, 0%, 0.2);
+    }
+
+    h1 {
+        font-size: clamp(3.8rem, 18vw, 6rem);
+        margin: 1rem 0 0;
+        text-align: center;
+    }
+
+    h1::after {
+        padding-right: 0;
+    }
+
+    .typewriter {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        font-size: 1.15rem;
+        text-shadow: 5px 5px 4px hsla(0, 0%, 0%, 0.2);
+    }
+
+    h3 {
+        margin: 1.5rem 0 0;
+    }
+
+    .contact {
+        gap: 12px;
+        margin-top: 2rem;
+    }
+
+    .contact svg {
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+    }
+
+    /*
+     * On mobile, scale(1.2) can cause horizontal
+     * overflow, so we reduce the hover effect.
+     */
+    .contact svg:hover {
+        scale: 1.08;
+    }
+
+
+    /* ================= */
+    /*       WORK        */
+    /* ================= */
+
+    .work {
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .video-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .video-grid.video-grid iframe {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    /*
+     * 1.1x on a phone can make the iframe
+     * overflow the screen.
+     */
+    .video-grid.video-grid iframe:hover {
+        scale: 1.02;
+    }
+
+    .video-grid.video-grid:has(iframe:hover) > iframe:not(:hover) {
+        scale: 1;
+    }
+
+
+    /* ================= */
+    /*      ABOUT ME     */
+    /* ================= */
+
+    .aboutme {
+        padding-bottom: 5rem;
+    }
+
+    .aboutme-wrapper {
+        width: calc(100% - 2rem);
+        margin: 1.5rem 1rem;
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    /*
+     * 1.05 can make the box exceed the viewport.
+     * Keep the effect but make it subtle.
+     */
+    .aboutme-wrapper:hover {
+        transform: scale(1.01);
+    }
+
+    .aboutme p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        margin: 0;
+    }
+
+
+    /* ================= */
+    /*      REVIEWS      */
+    /* ================= */
+
+    .reviews {
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .reviews-list {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    .reviews-list > * {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+
+    /* ================= */
+    /*     FINAL CTA     */
+    /* ================= */
+
+    .final-cta {
+        min-height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .final-cta h3 {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .final-cta .contact {
+        margin-top: 2rem;
+    }
+}
+
+
+/* Très petits téléphones */
+@media (max-width: 380px) {
+
+    .hero__content {
+        padding: 1.5rem .75rem;
+    }
+
+    .profile-picture {
+        width: 90px;
+        height: 90px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .typewriter {
+        font-size: .95rem;
+    }
+
+    h2 {
+        font-size: 2.1rem;
+    }
+
+    .aboutme-wrapper {
+        padding: 1.2rem;
+    }
+
+    .aboutme p {
+        font-size: .95rem;
+        line-height: 1.5rem;
+    }
+
+    .contact {
+        gap: 8px;
+    }
+
+    .contact svg {
+        width: 40px;
+        height: 40px;
+        padding: 9px;
+    }
+}
